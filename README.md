@@ -2,13 +2,20 @@
 
 LINQ-Style PowerShell Methods
 
-# About
+## About
 
-This is a very simple library that wraps some LINQ methods for integrating with PowerShell. It exposes a single `plinq` class that you can use to query arrays. 
+This is a very simple library that wraps some LINQ methods for integrating with PowerShell. It exposes a single `plinq` class that you can use to query arrays. You can chain together methods just like with LINQ in C#.
 
 ```powershell
 $Array = 1..1000000
 [plinq]::new($Array).Where({$args[0] -gt 10000}).Skip(10).Take(100)
+```
+
+## Installation
+
+```powershell
+Install-Module plinq
+Import-Module plinq
 ```
 
 ## Performance 
