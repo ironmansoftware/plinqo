@@ -1,31 +1,31 @@
-# PLINQ
+# plinqo
 
 LINQ-Style PowerShell Methods
 
 ## About
 
-This is a very simple library that wraps some LINQ methods for integrating with PowerShell. It exposes a single `plinq` class that you can use to query arrays. You can chain together methods just like with LINQ in C#.
+This is a very simple library that wraps some LINQ methods for integrating with PowerShell. It exposes a single `plinqo` class that you can use to query arrays. You can chain together methods just like with LINQ in C#.
 
 ```powershell
 $Array = 1..1000000
-[plinq]::new($Array).Where({$args[0] -gt 10000}).Skip(10).Take(100)
+[plinqo]::new($Array).Where({$args[0] -gt 10000}).Skip(10).Take(100)
 ```
 
 ## Installation
 
 ```powershell
-Install-Module plinq
-Import-Module plinq
+Install-Module plinqo
+Import-Module plinqo
 ```
 
 ## Performance 
 
-PLINQ is pretty fast. It's about as fast as the `where()` method in PowerShell and much faster than `Where-Object`.
+plinqo is pretty fast. It's about as fast as the `where()` method in PowerShell and much faster than `Where-Object`.
 
 ```powershell
 $Array = 1..1000000
 Measure-Command {
-    [plinq]::new($Array).Where({$args[0] -gt 10000})
+    [plinqo]::new($Array).Where({$args[0] -gt 10000})
 }
 
 Days              : 0
@@ -76,7 +76,7 @@ TotalMilliseconds : 5303.7798
 
 ## Methods
 
-PLINQ provides methods for numerous LINQ extension methods. 
+plinqo provides methods for numerous LINQ extension methods. 
 
 - All
 - Any
